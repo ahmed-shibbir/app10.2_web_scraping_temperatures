@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 import pandas as pd
 from matplotlib import pyplot as plt
+import plotly.express as px
 
 import streamlit as st
 
@@ -69,6 +70,7 @@ print(x_series)
 y_series = df["Temperature"]
 print(y_series)
 
+#############################
 # plt.figure(figsize=(10, 6))  # Adjust the figure size as needed
 # plt.plot(df['Date'], df['Temperature'], marker='o', linestyle='-')
 # plt.title('Temperature Over Time')
@@ -79,15 +81,18 @@ print(y_series)
 # # Show the graph
 # plt.tight_layout()
 # plt.show()
-
-st.title('Temperature Over Time')
-st.write('Line Chart with Date and Time on x-axis')
-
-# Create Series for x (DateTime) and y (Temperature)
-x = df['Date']
-y = df['Temperature']
-
-# Create a line graph using st.line_chart()
-st.line_chart(pd.concat([x, y], axis=1).set_index('Date'))
+#######################
+# st.title('Temperature Over Time')
+# st.write('Line Chart with Date and Time on x-axis')
+#
+# # Create Series for x (DateTime) and y (Temperature)
+# x = df['Date']
+# y = df['Temperature']
+#
+# # Create a line graph using st.line_chart()
+# st.line_chart(pd.concat([x, y], axis=1).set_index('Date'))
 
 # Show the graph in the Streamlit app
+##########################
+figure = px.line(x=x_series, y=y_series, labels={"x":"Date", "y":"Temperatures (c)"})
+st.plotly_chart(figure)
