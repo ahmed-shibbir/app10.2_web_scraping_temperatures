@@ -1,0 +1,1 @@
+# This app scrapes webpage and extract temperature data. The app also creates s line graph with the data.

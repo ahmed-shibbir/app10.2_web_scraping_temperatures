@@ -1,0 +1,11 @@
+#temperature:
+#  css: '#temperatureId'
+
+#
+temperature:
+  css: '#temperatureId > b'
+#css: '#temperatureId'
+
+#css: 'b'
+
+#css: '//*[@id="temperatureLabel"]'
